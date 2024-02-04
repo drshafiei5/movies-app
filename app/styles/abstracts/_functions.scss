@@ -1,0 +1,10 @@
+@use './variables' as v;
+
+@function asset($base, $type, $path) {
+    @return url($base + $type + $path);
+}
+
+
+@function font($path, $base: v.$base-url) {
+    @return asset($base, 'fonts/', $path);
+}

@@ -1,0 +1,27 @@
+@use 'node_modules/sass-mq/mq';
+@use '../abstracts/variables' as v;
+
+.container {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+
+    @include mq.mq(mobile) {
+        max-width: 540px;
+    }
+
+    @include mq.mq(tablet) {
+        max-width: 720px;
+    }
+
+    @include mq.mq(desktop) {
+        max-width: 1140px;
+    }
+
+    @include mq.mq(wide) {
+        max-width: v.$max-width;
+    }
+}

@@ -10,7 +10,7 @@ import {
   type TypedUseSelectorHook,
 } from "react-redux";
 
-/* Instruments */
+
 import { reducer } from "./rootReducer";
 import { middleware } from "./middleware";
 

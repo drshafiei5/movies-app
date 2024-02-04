@@ -1,7 +1,7 @@
 /* Core */
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-/* Instruments */
+
 import type { ReduxState, ReduxDispatch } from "./store";
 
 /**

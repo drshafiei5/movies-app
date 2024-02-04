@@ -1,10 +1,17 @@
 /* Components */
-import { Counter } from "./components/Counter/Counter";
 
-export default function IndexPage() {
-  return <Counter />;
+import { nextService } from "@/lib/axios";
+import MovieList from "./components/MovieList/MovieList";
+
+export default async function IndexPage() {
+    const {
+        data: { data },
+    } = await nextService.get<MoviesRes>("/movies/1");
+
+
+    return <MovieList movies={data}/>;
 }
 
 export const metadata = {
-  title: "Redux Toolkit",
+    title: "فیلم نت",
 };

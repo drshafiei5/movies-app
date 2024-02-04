@@ -1,0 +1,58 @@
+@use "@/app/styles/abstracts/variables" as v;
+
+.movie {
+    // padding-left: 2rem;
+    
+    &__content {
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        font-size: 0.86rem;
+    }
+
+    &__photo {
+        width: 100%;
+        height: 300px;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    &__overlay {
+        opacity: 0;
+        transition: .5s ease;
+        position: absolute;
+        background-color: v.$overlay-color;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: v.$text-color;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    &:hover &__overlay {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    &__rank {
+        display: flex;
+        font-weight: bold;
+        gap: 1rem;
+    }
+
+    &__title {
+        color: v.$text-color;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        font-size: 0.86rem;
+    }
+}
