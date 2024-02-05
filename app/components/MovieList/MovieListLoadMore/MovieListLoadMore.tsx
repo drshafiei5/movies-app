@@ -21,9 +21,8 @@ const MovieListLoadMore = (props: MovieListLoadMoreProps) => {
     const hasNextPage = useSelector(selectHasNextPage);
     const moviesStatus = useSelector(selectMoviesStatus);
 
-    const loadMore = React.useCallback(async (page: number) => {
-        const res = await dispatch(fetchAllMovie(page));
-        return (res.payload as MoviesRes).data;
+    const loadMore = React.useCallback((page: number) => {
+        dispatch(fetchAllMovie(page));
     }, []);
 
     return (
