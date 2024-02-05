@@ -1,7 +1,7 @@
 @use "@/app/styles/abstracts/variables" as v;
 
 .movie {
-    // padding-left: 2rem;
+    direction: rtl;
     
     &__content {
         width: 100%;
