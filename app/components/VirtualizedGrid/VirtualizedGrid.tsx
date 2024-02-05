@@ -34,7 +34,7 @@ const VirtualizedGrid = <T,>({
 
     const calculateColumnCount = (width: number) => {
         const count = Math.floor(width / itemMinWidth);
-        return !isNaN(+count) && +count > 0 ? +count : 1;
+        return !isNaN(count) && +count > 0 ? +count : 1;
     };
 
     const calculateItemWidth = (width: number, columnCount: number) => {
@@ -55,7 +55,7 @@ const VirtualizedGrid = <T,>({
                             );
 
                             const rowCount =
-                                !isNaN(+allRow) && +allRow > 0 ? +allRow : 1;
+                                !isNaN(allRow) && +allRow > 0 ? +allRow : 1;
 
                             const itemWidth = calculateItemWidth(
                                 containerWidth,
