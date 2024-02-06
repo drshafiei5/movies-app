@@ -22,7 +22,7 @@ export const renderCell = <T,>({
             key={key}
             style={{
                 ...style,
-                paddingLeft: index % columnCount === 0 ? 0 : "1rem",
+                paddingLeft: index % columnCount === 0 ? 0 : "0.86rem",
             }}
         >
             {renderItem(items[index])}

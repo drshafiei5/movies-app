@@ -27,6 +27,8 @@ const MovieListLoadMore = (props: MovieListLoadMoreProps) => {
 
     return (
         <LoadMore
+            itemHeight={370}
+            itemMinWidth={200}
             loadMore={loadMore}
             dataSelector={selectMovies}
             defaultPage={defaultPage}

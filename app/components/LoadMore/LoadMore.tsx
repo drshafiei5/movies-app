@@ -9,9 +9,10 @@ import { ReduxState, useSelector } from "@/lib/redux";
 import VirtualizedGrid from "../VirtualizedGrid/VirtualizedGrid";
 import { renderCell } from "../VirtualizedGrid/renderCell";
 
-
 interface LoadMoreProps<T extends { id: string }> {
     defaultPage: number;
+    itemHeight: number;
+    itemMinWidth: number;
     loadMore: (page: number) => void;
     hasNextPage?: boolean;
     isFetching?: boolean;
@@ -26,6 +27,8 @@ const LoadMore = <T extends { id: string }>({
     hasNextPage,
     renderItem,
     dataSelector,
+    itemHeight,
+    itemMinWidth
 }: LoadMoreProps<T>) => {
     const page = useRef(defaultPage);
     const { ref, inView } = useInView();
@@ -42,8 +45,8 @@ const LoadMore = <T extends { id: string }>({
         <div className={styles.loadMore}>
             <VirtualizedGrid
                 items={data}
-                itemHeight={370}
-                itemMinWidth={190}
+                itemHeight={itemHeight}
+                itemMinWidth={itemMinWidth}
                 renderCell={(props) => renderCell({ ...props, renderItem })}
             />
 
